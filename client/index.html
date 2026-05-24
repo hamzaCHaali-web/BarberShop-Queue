@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%88%3C/text%3E%3C/svg%3E" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-512.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <title>Smart Queue</title>
+    <style>
+      #splash {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background: #050505; color: #fff;
+        font-family: system-ui, -apple-system, sans-serif;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+      #splash.hide {
+        opacity: 0; visibility: hidden; pointer-events: none;
+      }
+      #splash-logo {
+        width: 80px; height: 80px; border-radius: 20px;
+        background: linear-gradient(135deg, #FF7A00, #FFB347);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 40px; font-weight: 800; color: #fff;
+        box-shadow: 0 0 40px rgba(255,122,0,0.3);
+        animation: splashPulse 1.5s ease-in-out infinite;
+      }
+      #splash-name {
+        margin-top: 20px; font-size: 20px; font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      #splash-spinner {
+        margin-top: 32px; width: 24px; height: 24px;
+        border: 2px solid rgba(255,255,255,0.1);
+        border-top-color: #FF7A00;
+        border-radius: 50%; animation: spin 0.8s linear infinite;
+      }
+      @keyframes splashPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-CAw6yVV5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DUbDJD69.css">
+  </head>
+  <body>
+    <div id="root">
+      <div id="splash">
+        <div id="splash-logo">Q</div>
+        <div id="splash-name">Barbershop</div>
+        <div id="splash-spinner"></div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => document.getElementById('splash')?.classList.add('hide'), 4000)
+      })
+    </script>
+  </body>
+</html>
